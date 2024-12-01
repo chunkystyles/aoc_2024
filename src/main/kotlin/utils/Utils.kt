@@ -8,6 +8,7 @@ class Utils {
     companion object {
 
         private const val INPUT_URL_TEMPLATE = "https://adventofcode.com/2024/day/{day}/input"
+        private var startTime = 0L
 
         /**
          * Retrieves the puzzle input for a given day from a local file, and if not present, then from the Advent of Code website.
@@ -26,6 +27,27 @@ class Utils {
                 writeTextToFile(fileName, input)
                 input
             }
+        }
+
+        /**
+         * Sets the start time to the current time in milliseconds.
+         * Use this method before running the code to be timed, then call getElapsedTime() after the code has run.
+         */
+        fun setStartTime() {
+            startTime = System.currentTimeMillis()
+        }
+
+        /**
+         * Returns the elapsed time since the start time was set.
+         *
+         * @return The elapsed time in minutes, seconds, and milliseconds.
+         */
+        fun getElapsedTime(): String {
+            val elapsedTime = System.currentTimeMillis() - startTime
+            val minutes = elapsedTime / 60000
+            val seconds = (elapsedTime % 60000) / 1000
+            val milliseconds = elapsedTime % 1000
+            return "${minutes}m ${seconds}s ${milliseconds}ms"
         }
 
         private fun getInputFromSite(day: String): String {
