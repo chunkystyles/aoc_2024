@@ -8,7 +8,9 @@ class Utils {
   companion object {
 
     private const val INPUT_URL_TEMPLATE = "https://adventofcode.com/2024/day/{day}/input"
-    private var startTime = 0L
+    private var inputIoStartTime = 0L
+    private var inputParseStartTime = 0L
+    private var algorithmStartTime = 0L
 
     /**
      * Retrieves the puzzle input for a given day from a local file, and if not present, then from the Advent of Code website.
@@ -30,20 +32,52 @@ class Utils {
     }
 
     /**
-     * Sets the start time to the current time in milliseconds.
-     * Use this method before running the code to be timed, then call getElapsedTime() after the code has run.
+     * Deprecated. Use [setInputIoStartTime] instead.
      */
     fun setStartTime() {
-      startTime = System.currentTimeMillis()
+      inputIoStartTime = System.currentTimeMillis()
     }
 
     /**
-     * Returns the elapsed time since the start time was set.
+     * Sets the start time for the file IO phase.
+     */
+    fun setInputIoStartTime() {
+      inputIoStartTime = System.currentTimeMillis()
+    }
+
+    /**
+     * Sets the start time for the input parsing phase.
+     */
+    fun setInputParseStartTime() {
+      inputParseStartTime = System.currentTimeMillis()
+    }
+
+    /**
+     * Sets the start time for the algorithm phase.
+     */
+    fun setAlgorithmStartTime() {
+      algorithmStartTime = System.currentTimeMillis()
+    }
+
+    /**
+     * Calculates run time of each phase of the program.
      *
-     * @return The elapsed time in minutes, seconds, and milliseconds.
+     * @return The formatted run time of each phase of the program.
      */
     fun getElapsedTime(): String {
-      val elapsedTime = System.currentTimeMillis() - startTime
+      val now = System.currentTimeMillis()
+      return if (inputParseStartTime == 0L || algorithmStartTime == 0L) {
+        "Elapsed time: ${getElapsedTimeBetween(inputIoStartTime, now)}"
+      } else {
+        "Input IO: ${getElapsedTimeBetween(inputIoStartTime, inputParseStartTime)}\n" +
+            "Input Parse: ${getElapsedTimeBetween(inputParseStartTime, algorithmStartTime)}\n" +
+            "Algorithm: ${getElapsedTimeBetween(algorithmStartTime, now)}\n" +
+            "Total: ${getElapsedTimeBetween(inputIoStartTime, now)}"
+      }
+    }
+
+    private fun getElapsedTimeBetween(start: Long, end: Long): String {
+      val elapsedTime = end - start
       val minutes = elapsedTime / 60000
       val seconds = (elapsedTime % 60000) / 1000
       val milliseconds = elapsedTime % 1000
