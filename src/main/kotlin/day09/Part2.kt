@@ -1,13 +1,13 @@
 package day09
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(9)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(9)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val fileSystem: MutableList<Int> = mutableListOf()
   val freeSpace: MutableList<Pair<Int, Int>> = mutableListOf()
   for (fileId in output.indices) {
@@ -62,6 +62,6 @@ fun main() {
       total += i * fileSystem[i]
     }
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println("Total: $total")
 }

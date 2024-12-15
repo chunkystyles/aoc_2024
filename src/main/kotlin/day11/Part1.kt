@@ -1,22 +1,22 @@
 package day11
 
-import utils.Utils
+import utils.*
 import kotlin.math.floor
 import kotlin.math.log10
 import kotlin.math.pow
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(11)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(11)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val numberOfBlinks = 25
   var stones = blink(output)
   for (i in 0 until numberOfBlinks - 1) {
     stones = blink(stones)
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println(stones.size)
 }
 

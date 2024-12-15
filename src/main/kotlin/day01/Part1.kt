@@ -1,11 +1,11 @@
 package day01
 
-import utils.Utils
+import utils.*
 import kotlin.math.abs
 
 fun main() {
-  Utils.setStartTime()
-  val input = Utils.getInput(1)
+  setStartTime()
+  val input = getInput(1)
   val listPair = parseInput(input)
   val list1 = listPair.first
   val list2 = listPair.second
@@ -16,7 +16,7 @@ fun main() {
     total += abs(list1[i] - list2[i])
   }
   println("Total: $total")
-  println("Elapsed time: ${Utils.getElapsedTime()}")
+  println("Elapsed time: ${getElapsedTime()}")
 }
 
 fun parseInput(input: String): Pair<MutableList<Int>, MutableList<Int>> {

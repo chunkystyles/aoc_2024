@@ -1,6 +1,6 @@
 package day11
 
-import utils.Utils
+import utils.*
 import kotlin.math.floor
 import kotlin.math.log10
 import kotlin.math.pow
@@ -9,17 +9,17 @@ val singleCache = mutableMapOf<Long, Pair<Long, Long>>()
 val multipleCache = mutableMapOf<Pair<Long, Int>, Long>()
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(11)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(11)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val numberOfBlinks = 75
   var count = 0L
   for (stone in output) {
     count += multipleBlinks(stone, numberOfBlinks)
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println("count = $count")
 }
 

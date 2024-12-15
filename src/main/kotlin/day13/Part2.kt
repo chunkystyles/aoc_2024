@@ -1,13 +1,13 @@
 package day13
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(13)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(13)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val aCost = 3
   val bCost = 1
   val offset = 10000000000000L
@@ -16,6 +16,6 @@ fun main() {
     val (a, b) = solve(Triple(triple.first, triple.second, Pair(triple.third.first + offset, triple.third.second + offset)))
     total += a * aCost + b * bCost
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println("Total: $total")
 }

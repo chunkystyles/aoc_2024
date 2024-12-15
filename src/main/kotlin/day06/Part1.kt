@@ -1,13 +1,13 @@
 package day06
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(6)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(6)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   var guard = Guard(0, 0, 'X')
   for (i in output.indices) {
     for (j in output[i].indices) {
@@ -36,7 +36,7 @@ fun main() {
   println(output.joinToString("\n") { it.joinToString("") })
   val count = output.flatten().filter { it == 'X' }.size
   println("Count: $count")
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
 }
 
 fun isOutOfBounds(x: Int, y: Int, output: List<List<Char>>): Boolean {

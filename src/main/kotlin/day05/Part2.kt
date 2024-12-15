@@ -1,16 +1,16 @@
 package day05
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(5)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(5)
+  setInputParseStartTime()
   val output = parseInput2(input)
   val pageOrderPairs = output.pageOrderPairs
   val pageOrderSet = output.pageOrderSet
   val updates = output.updates
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   var total = 0
   updates.forEach {
     if (getMiddleNumberOfValidUpdate(pageOrderSet, it) == 0) {
@@ -18,7 +18,7 @@ fun main() {
     }
   }
   println("Total: $total")
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
 }
 
 class Output (val pageOrderPairs: Map<Int, Set<Int>>, val pageOrderSet: Set<String>, val updates: List<List<Int>>)

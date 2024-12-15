@@ -1,14 +1,14 @@
 package day04
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setStartTime()
-  val input = Utils.getInput(4)
+  setStartTime()
+  val input = getInput(4)
   val wordSearch = parseInput(input);
   val total = countXmas2(wordSearch)
   println("Total: $total")
-  println("Elapsed time: ${Utils.getElapsedTime()}")
+  println("Elapsed time: ${getElapsedTime()}")
 }
 
 fun countXmas2(wordSearch: List<List<Char>>): Int {

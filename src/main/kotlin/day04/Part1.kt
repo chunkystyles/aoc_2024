@@ -1,16 +1,16 @@
 package day04
 
-import utils.Utils
+import utils.*
 
 val sequence = charArrayOf('X', 'M', 'A', 'S')
 
 fun main() {
-  Utils.setStartTime()
-  val input = Utils.getInput(4)
+  setStartTime()
+  val input = getInput(4)
   val wordSearch = parseInput(input);
   val total = countXmas(wordSearch)
   println("Total: $total")
-  println("Elapsed time: ${Utils.getElapsedTime()}")
+  println("Elapsed time: ${getElapsedTime()}")
 }
 
 fun parseInput(input: String): List<List<Char>> {

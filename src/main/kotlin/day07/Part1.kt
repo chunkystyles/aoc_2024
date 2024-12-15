@@ -1,13 +1,13 @@
 package day07
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(7)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(7)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   var total = 0L
   output.forEach() { line ->
     val testValue = line.first
@@ -25,7 +25,7 @@ fun main() {
       total += testValue
     }
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println("Total: $total")
 }
 

@@ -1,14 +1,14 @@
 package day03
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setStartTime()
-  val input = Utils.getInput(3)
+  setStartTime()
+  val input = getInput(3)
   val output = parseInput2(input);
   val total = output.sumOf { it.first * it.second }
   println("Total: $total")
-  println("Elapsed time: ${Utils.getElapsedTime()}")
+  println("Elapsed time: ${getElapsedTime()}")
 }
 
 fun parseInput2(input: String): List<Pair<Int, Int>> {

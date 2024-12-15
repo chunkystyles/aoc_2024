@@ -1,14 +1,14 @@
 package day08
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(8)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(8)
+  setInputParseStartTime()
   val output = parseInput(input)
   val antinodes = mutableSetOf<String>()
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   output.values.forEach() { list ->
     for (i in list.indices) {
       val left = list[i]
@@ -34,6 +34,6 @@ fun main() {
     }
   }
   val total = antinodes.size
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println("Antinodes: $total")
 }

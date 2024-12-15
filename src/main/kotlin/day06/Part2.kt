@@ -1,13 +1,13 @@
 package day06
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(6)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(6)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val guardSet = mutableSetOf<String>()
   var guard = Guard(0, 0, 'X')
   for (i in output.indices) {
@@ -50,7 +50,7 @@ fun main() {
     guardSet.add(guard.getKey())
   }
   println("Count: $obstacleCount")
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
 }
 
 fun secondLoop(guard: Guard, output: List<List<Char>>, guardSet: MutableSet<String>): Boolean {

@@ -4,8 +4,6 @@ import java.net.HttpURLConnection
 import java.net.URI
 import java.nio.file.Paths
 
-class Utils {
-  companion object {
 
     private const val INPUT_URL_TEMPLATE = "https://adventofcode.com/2024/day/{day}/input"
     private var inputIoStartTime = 0L
@@ -100,6 +98,3 @@ class Utils {
     fun writeTextToFile(fileName: String, text: String) {
       Paths.get(fileName).toFile().writeText(text)
     }
-
-  }
-}

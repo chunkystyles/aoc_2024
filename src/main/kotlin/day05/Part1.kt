@@ -1,18 +1,18 @@
 package day05
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(5)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(5)
+  setInputParseStartTime()
   val output = parseInput(input)
   val pageOrders = output.first
   val updates = output.second
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val total = updates.sumOf { getMiddleNumberOfValidUpdate(pageOrders, it) }
   println("Total: $total")
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
 }
 
 fun parseInput(input: String): Pair<Set<String>, List<List<Int>>> {

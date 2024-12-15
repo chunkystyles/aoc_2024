@@ -1,13 +1,13 @@
 package day14
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(14)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(14)
+  setInputParseStartTime()
   val robots = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val horizontalBoundary = 101
   val verticalBoundary = 103
   var i = 1
@@ -20,7 +20,7 @@ fun main() {
     }
     i++
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   printMap(robots, verticalBoundary, horizontalBoundary)
   println("i = $i")
 }

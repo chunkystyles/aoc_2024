@@ -1,13 +1,13 @@
 package day10
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(10)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(10)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   buildConnections(output)
   var count = 0
   for (row in output) {
@@ -25,6 +25,6 @@ fun main() {
       }
     }
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println("count = $count")
 }

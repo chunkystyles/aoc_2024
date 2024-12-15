@@ -1,13 +1,13 @@
 package day12
 
-import utils.Utils
+import utils.*
 
 fun main() {
-  Utils.setInputIoStartTime()
-  val input = Utils.getInput(12)
-  Utils.setInputParseStartTime()
+  setInputIoStartTime()
+  val input = getInput(12)
+  setInputParseStartTime()
   val output = parseInput(input)
-  Utils.setAlgorithmStartTime()
+  setAlgorithmStartTime()
   val rows = output.size
   val cols = output[0].size
   val map = mutableMapOf<String, MutableList<Plot>>()
@@ -64,7 +64,7 @@ fun main() {
     }
     total += area * fences
   }
-  println(Utils.getElapsedTime())
+  println(getElapsedTime())
   println(total)
 }
 

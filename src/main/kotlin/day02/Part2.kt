@@ -1,11 +1,11 @@
 package day02
 
-import utils.Utils
+import utils.*
 import kotlin.math.abs
 
 fun main() {
-  Utils.setStartTime()
-  val input = Utils.getInput(2)
+  setStartTime()
+  val input = getInput(2)
   val reports = parseInput(input)
   var count = 0
   reports.map() {
@@ -19,7 +19,7 @@ fun main() {
     }
   }
   println("Safe levels: $count")
-  println("Elapsed time: ${Utils.getElapsedTime()}")
+  println("Elapsed time: ${getElapsedTime()}")
 }
 
 fun isReportSafe(report: Report): Boolean {
