@@ -34,7 +34,7 @@ fun main() {
 
 // Just because I haven't messed with enums in Kotlin
 enum class Space {
-  ROBOT, WALL, EMPTY, BOX
+  ROBOT, WALL, EMPTY, BOX, BOX_LEFT, BOX_RIGHT
 }
 
 enum class Direction {
@@ -126,6 +126,8 @@ fun printMap(map: List<List<Space>>) {
           Space.EMPTY -> "."
           Space.ROBOT -> "@"
           Space.BOX -> "O"
+          Space.BOX_LEFT -> "["
+          Space.BOX_RIGHT -> "]"
         }
       )
     }
